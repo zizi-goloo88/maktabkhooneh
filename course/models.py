@@ -46,6 +46,7 @@ class Course(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     category = models.ForeignKey(Sub_Sub_Learn, on_delete=models.CASCADE)
     description = models.TextField()
+    price = models.FloatField(help_text= 'price in toman')
     other_courses_needed = models.ForeignKey("self", on_delete=models.CASCADE, blank = True, null = True)
     about = models.TextField()
 

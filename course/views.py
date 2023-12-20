@@ -10,3 +10,10 @@ def course_list(request):
     }
     return render(request, 'main_page/main_page.html', context=courses)
 
+def course_page(request):
+    course = Course.objects.all()
+    courses = {
+        'courses' : course
+    }
+    return render(request, 'course_page/course_page.html', context=courses)
+
