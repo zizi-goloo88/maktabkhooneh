@@ -1,3 +1,12 @@
+from django.http.response import HttpResponse, JsonResponse
+from .models import Course, Main_Learn, Sub_Learn, Sub_Sub_Learn
 from django.shortcuts import render
 
-# Create your views here.
+
+def course_list(request):
+    course = Course.objects.all()
+    courses = {
+        'courses' : course
+    }
+    return render(request, 'main_page/main_page.html', context=courses)
+
