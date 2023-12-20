@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="learn/list">اساتید</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -47,7 +47,7 @@
           </div>
         </div>
       </nav>
-    <h1> لیست دوره ها : </h1>
+    <h3> لیست دوره ها : </h3>
 
     <table class = 'table'>
         <thead>
@@ -63,16 +63,16 @@
             <tr>
                 {% for item in courses %}
             
-                <td style="color: blue;">{{ item.name }}</td>
+                <td style="color: rgb(0,156,167);">{{ item.name }}</td>
                 <td>{{ item.category }}</td>
                 <td>{{ item.teacher }}</td>
-                <td>{{ item.price }}</td>
-                <td><a href="learn/course"><button type="button" class="buy-butten">خرید</button></a></td>
+                <td style="color: rgb(198,73,124);">{{ item.price }}</td>
+                <td><a href="learn/course"><button type="button" class="buy-butten" >خرید</button></a></td>
+                
     
             </tr>
                 {% endfor %}
         </tbody>
-
     </table>
 
 
