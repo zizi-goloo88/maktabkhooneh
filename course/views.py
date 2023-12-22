@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 
 def course_list(request):
+    #  this is view for list of courses
     course = Course.objects.all()
     courses = {
         'courses' : course
@@ -11,6 +12,7 @@ def course_list(request):
     return render(request, 'main_page/main_page.html', context=courses)
 
 def course_page(request):
+    #  this is a view for course detail
     course = Course.objects.all()
     courses = {
         'courses' : course
@@ -19,6 +21,7 @@ def course_page(request):
 
 
 def teachers_page(request):
+    #  this is a view for teacher list
     teacher = Teacher.objects.all()
     teachers = {
         'Teachers' : teacher
