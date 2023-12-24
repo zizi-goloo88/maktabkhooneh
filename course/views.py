@@ -5,15 +5,23 @@ from random import randint
 
 
 def course_list(request):
+    #  this is view for list of courses
     course = Course.objects.all()
     courses = {
         'courses' : course
     }
     return render(request, 'main_page/main_page.html', context=courses)
 
+def course_page(request):
+    course = Course.objects.all()
+    courses = {
+        'courses' : course
+    }
+    return render(request, 'course_page/course_page.html', context=courses)
 
 
 def teachers_page(request):
+    #  this is a view for teacher list
     teacher = Teacher.objects.all()
     teachers = {
         'Teachers' : teacher
@@ -33,7 +41,7 @@ def course_page(request, code):
     if request.method == 'POST':
         email = request.POST['email']
         name = request.POST['name']
-        lastname = request.POST['lastname']
+        lastname = request.POST['lastname']3
         nationalid = request.POST['nationalid']
         seat = request.POST['seat']
         Ticket.objects.create(
