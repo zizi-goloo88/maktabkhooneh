@@ -67,7 +67,11 @@
                 <td>{{ item.category }}</td>
                 <td>{{ item.teacher }}</td>
                 <td style="color: rgb(198,73,124);">{{ item.price }}</td>
-                <td><a href="learn/course"><button type="button" class="buy-butten" >خرید</button></a></td>
+                <td>
+                  <a href="learn/{{item.number}}">
+                    <button type="button" class="btn btn-primary">جزییات</button> 
+                  </a>
+                </td>
                 
     
             </tr>

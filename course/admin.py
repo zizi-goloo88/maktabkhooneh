@@ -1,5 +1,5 @@
 from django.contrib.admin import ModelAdmin,register
-from .models import Course, Teacher, Main_Learn, Sub_Learn, Sub_Sub_Learn
+from .models import Course, Teacher, Main_Learn, Sub_Learn, Sub_Sub_Learn,Ticket
 
 @register(Course)
 class CourseAdmin(ModelAdmin):
@@ -28,3 +28,6 @@ class SubLearnAdmin(ModelAdmin):
 class SUbSubLearnAdmin(ModelAdmin):
     search_fields = ['name']
 
+@register(Ticket)
+class TicketAdmin(ModelAdmin):
+    list_display =['name', 'last_name', 'reservation']

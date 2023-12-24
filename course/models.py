@@ -42,7 +42,7 @@ class Sub_Sub_Learn(models.Model):
 
 class Course(models.Model):
     name = models.CharField(max_length=255)
-    number = models.CharField(max_length= 10)
+    number = models.CharField(unique= True,max_length= 10)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     category = models.ForeignKey(Sub_Sub_Learn, on_delete=models.CASCADE)
     description = models.TextField()
@@ -53,3 +53,13 @@ class Course(models.Model):
     def __str__(self) -> str:
         return f'{self.name}'
 
+class Ticket(models.Model):
+    name = models.CharField(max_length= 200)
+    last_name = models.CharField(max_length= 200)
+    email = models.EmailField()
+    nationalid = models.CharField(max_length= 10)
+    seat = models.PositiveIntegerField()
+    reservation = models.CharField(max_length= 8, unique = True)
+    
+    def __str__(self) -> str:
+        return f'{self.name} {self.last_name}'
