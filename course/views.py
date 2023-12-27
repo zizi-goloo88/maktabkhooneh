@@ -41,7 +41,7 @@ def course_page(request, code):
     if request.method == 'POST':
         email = request.POST['email']
         name = request.POST['name']
-        lastname = request.POST['lastname']3
+        lastname = request.POST['lastname']
         nationalid = request.POST['nationalid']
         seat = request.POST['seat']
         Ticket.objects.create(
